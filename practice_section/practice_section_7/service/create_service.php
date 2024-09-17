@@ -3,13 +3,14 @@ global $connection;
 include "../connection/db.php";
 
 if (isset($_POST["submit"])) {
-    $username = $_POST["username"];
-    $password = $_POST["password"];
+    $username = mysqli_real_escape_string($connection, $_POST["username"]);
+    $password = mysqli_real_escape_string($connection, $_POST["password"]);
     $query = "INSERT INTO users(username, password) 
               VALUES ('$username', '$password')";
 
     if (mysqli_query($connection, $query)) {
         echo "New record created successfully";
+        exit();
     } else {
         echo "Error: " . $query . "<br>" . mysqli_error($connection);
     }
