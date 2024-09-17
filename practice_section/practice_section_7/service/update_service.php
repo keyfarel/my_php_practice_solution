@@ -11,7 +11,6 @@ if (isset($_POST['submit'])) {
               SET username = '$username', password = '$password' 
               WHERE id = $id";
 
-    // Eksekusi query
     if (mysqli_query($connection, $query)) {
         header("Location: ../view/read_view.php?message=UserUpdated");
         exit();
@@ -23,6 +22,5 @@ if (isset($_POST['submit'])) {
     exit();
 }
 
-// Tutup koneksi database
 mysqli_close($connection);
 ?>
