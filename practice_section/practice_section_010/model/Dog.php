@@ -17,7 +17,7 @@ class Dog {
     }
 
     public function showAll(){
-        echo "Ecye color: " . $this->eye_color . "<br>";
+        echo "Eye color: " . $this->eye_color . "<br>";
         echo "Nose : " . $this->nose . "<br>";
         echo "Color : " . $this->color . "<br>";
     }

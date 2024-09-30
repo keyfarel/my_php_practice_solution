@@ -5,7 +5,7 @@ include "../connection/db.php";
 if (isset($_POST["submit"])) {
     $username = mysqli_real_escape_string($connection, $_POST["username"]);
     $password = mysqli_real_escape_string($connection, $_POST["password"]);
-    $query = "INSERT INTO users(username, password) 
+    $query = "INSERT INTO users(username, password)
               VALUES ('$username', '$password')";
 
     if (mysqli_query($connection, $query)) {
